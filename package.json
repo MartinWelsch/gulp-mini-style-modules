@@ -1,7 +1,7 @@
 {
-  "name": "gulp-cs-style-modules",
+  "name": "gulp-mini-style-modules",
   "version": "1.0.0",
-  "description": "C# Style Modules for Gulp",
+  "description": "Mini Style Modules for Gulp",
   "main": "index.js",
   "directories": {
     "lib": "lib"
