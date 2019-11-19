@@ -1,6 +1,6 @@
 {
   "name": "gulp-mini-style-modules",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mini Style Modules for Gulp",
   "main": "index.js",
   "directories": {
