@@ -1,3 +1,11 @@
+# Description
+
+This plugin for gulp allows to modularize style sheets and minify class names.
+Additionally module definitions can be generated.
+
+## Available Module Generators
+- C#
+
 # Usage
 ```JavaScript
 const gulp = require("gulp");
