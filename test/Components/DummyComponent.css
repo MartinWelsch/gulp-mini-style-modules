@@ -1,0 +1,24 @@
+.icon {
+    color: red;
+}
+
+.parent {
+}
+
+.parent .nested {
+    color: pink;
+}
+
+.parent.disabled {
+    background: #666;
+}
+
+div.el-class {
+    display: none;
+}
+
+.miltiple,
+.classes,
+.block {
+    margin: 0;
+}

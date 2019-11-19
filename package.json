@@ -1,0 +1,26 @@
+{
+  "name": "gulp-cs-style-modules",
+  "version": "1.0.0",
+  "description": "C# Style Modules for Gulp",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "C#",
+    "cs",
+    "css",
+    "style",
+    "modules"
+  ],
+  "author": "Martin Welsch",
+  "license": "ISC",
+  "dependencies": {
+    "event-stream": "^4.0.1",
+    "gulp": "^4.0.2",
+    "vinyl": "^2.2.0"
+  }
+}

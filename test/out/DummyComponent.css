@@ -1,0 +1,24 @@
+.DummyComponent-a {
+    color: red;
+}
+
+.DummyComponent-b {
+}
+
+.DummyComponent-b .DummyComponent-c {
+    color: pink;
+}
+
+.DummyComponent-b.DummyComponent-d {
+    background: #666;
+}
+
+div.DummyComponent-e {
+    display: none;
+}
+
+.DummyComponent-f,
+.DummyComponent-g,
+.DummyComponent-h {
+    margin: 0;
+}
