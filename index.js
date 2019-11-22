@@ -33,7 +33,7 @@ function loadModules() {
             this.modules.push(module);
 
             var cssString = file.contents.toString();
-            const cssClassRegex = /\.([_A-Za-z0-9\-]+)/g;
+            const cssClassRegex = /\.([a-zA-Z0-9-]+)(?:\s{|\,\s*|[ ]+)/g;
             var outCssStr = "";
 
             var pos = 0;
