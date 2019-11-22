@@ -10,7 +10,7 @@ const defaultOptions = {
     },
     renameClassNames: true,
     moduleDefinitionGenerators: [require("./lib/generators/cs-module-definition")],
-    classNameModifier: function(className, module) {
+    classNameModifier: function (className, module) {
         return module.name + "-" + className;
     }
 };
@@ -29,34 +29,33 @@ function CsStyleModules(options) {
 function loadModules() {
     return es.map(function (file, cb) {
         if (file.isBuffer()) {
-            var module = new Module(options.moduleName(file.path), file.path, this.options.classNameModifier);
+            var module = new Module(options.moduleName(file.path), file.path, this.options.renameClassNames, this.options.classNameModifier);
             this.modules.push(module);
 
-            if (options.renameClassNames) {
-                var cssString = file.contents.toString();
-                var outCssStr = "";
-                const cssClassRegex = /\.([_A-Za-z0-9\-]+)/g;
+            var cssString = file.contents.toString();
+            const cssClassRegex = /\.([_A-Za-z0-9\-]+)/g;
+            var outCssStr = "";
 
-                var pos = 0;
-                var match;
-                while (match = cssClassRegex.exec(cssString)) {
-                    //get new classname
-                    var repl = module.getMappedClassName(match[1]);
+            var pos = 0;
+            var match;
+            while (match = cssClassRegex.exec(cssString)) {
+                //get new classname
+                var repl = module.getMappedClassName(match[1]);
 
-                    //copy css
-                    outCssStr += cssString.substring(pos, match.index);
-                    outCssStr += "." + repl;
+                //copy css
+                outCssStr += cssString.substring(pos, match.index);
+                outCssStr += "." + repl;
 
-                    //reposition cursor to end of old class name
-                    pos = match.index + match[1].length + 1;
-                }
-
-                //copy remaining css
-                outCssStr += cssString.substring(pos);
-
-                file.contents = Buffer.from(outCssStr);
+                //reposition cursor to end of old class name
+                pos = match.index + match[1].length + 1;
             }
+
+            //copy remaining css
+            outCssStr += cssString.substring(pos);
+
+            file.contents = Buffer.from(outCssStr);
         }
+
         cb(null, file);
     });
 }
